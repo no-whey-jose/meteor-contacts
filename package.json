@@ -17,5 +17,8 @@
     "mainModule": {
       "client": "client/main.jsx"
     }
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.0.2"
   }
 }
