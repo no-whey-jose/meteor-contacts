@@ -25,7 +25,7 @@ Meteor.startup(() => {
     });
   }
 
-  Meteor.publish("contacts", () => {
-    return Contacts.find({}, { limit: 20 });
+  Meteor.publish("contacts", (perPage) => {
+    return Contacts.find({}, { limit: perPage });
   });
 });
