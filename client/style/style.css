@@ -1,0 +1,9 @@
+.contanct-list{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.thumbnail {
+  width: 300px;
+}
