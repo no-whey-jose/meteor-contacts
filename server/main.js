@@ -7,15 +7,20 @@ Meteor.startup(() => {
   const numberOfRecords = Contacts.find({}).count();
   if (!numberOfRecords) {
     _.times(5000, () => {
-      const name = faker.person.fullName();
-      const email = faker.internet.email();
+      const firstName = faker.person.firstName();
+      const lastName = faker.person.lastName();
+      const email = faker.internet.email({
+        firstName,
+        lastName,
+      });
       const phone = faker.phone.number();
+      const avatar = faker.image.avatarLegacy();
 
       Contacts.insert({
-        name,
+        name: `${firstName} ${lastName}`,
         email,
         phone,
-        avatar: faker.image.avatar(),
+        avatar,
       });
     });
   }
