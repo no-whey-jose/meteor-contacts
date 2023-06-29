@@ -19,4 +19,8 @@ Meteor.startup(() => {
       });
     });
   }
+
+  Meteor.publish("contacts", () => {
+    return Contacts.find({}, { limit: 20 });
+  });
 });
